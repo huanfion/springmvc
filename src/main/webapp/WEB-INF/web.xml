@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+          <!-- 配置Spring mvc下的配置文件的位置和名称 -->
+         <!-- 我们也可以不新建springmvc.xml，而是用默认的，默认的配置文件格式为/WEB-INF/[servlet-name]-servlet.xml，对应这里的就是springmvc-servlet.xml -->
+        <!--  <init-param>
+         	<param-name>contextConfigLocation</param-name>
+         	<param-value>classpath:springmvc.xml</param-value>
+         </init-param> -->
+           <!-- load-on-startup：表示启动容器时初始化该Servlet -->
+        <load-on-startup>1</load-on-startup>
+        
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!-- url-pattern：表示哪些请求交给Spring Web MVC处理， "/"是用来定义默认servlet映射的。也可以如"*.html"表示拦截所有以html为扩展名的请求。 -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
